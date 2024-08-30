@@ -18,14 +18,15 @@ def random_select_files(source_dir, target_dir, num_files):
             shutil.move(full_file_name, target_dir)
             
 '''
-    os.mkdir('./data_train/')
-    os.makedirs('./data_test/concert')
-    os.makedirs('./data_test/non-concert')
-    random_select_files('./data/concert/','./data_test/concert',1000)
-    random_select_files('./data/non-concert/','./data_test/non-concert',100)
-    shutil.copytree('./data/concert','./data_train/concert')
-    shutil.copytree('./data/non-concert', './data_train/non-concert')
+os.mkdir('./data_train/')
+os.makedirs('./data_test/concert')
+os.makedirs('./data_test/non-concert')
+random_select_files('./data/concert/','./data_test/concert',600)
+random_select_files('./data/non-concert/','./data_test/non-concert',420)
+shutil.copytree('./data/concert','./data_train/concert')
+shutil.copytree('./data/non-concert', './data_train/non-concert')
 '''
+
 def get_trainloader(src):
     dataset_train = torchvision.datasets.ImageFolder(root=src,transform=gen_dataloader.train_data_process)
     return DataLoader(dataset_train,batch_size=10,shuffle=True, num_workers=4)
