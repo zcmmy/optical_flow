@@ -7,7 +7,7 @@ vgg11的效果很差，基本可以放弃这一网络。
 目前已经完全放弃了其余两个模型，转入使用ResNet18进行训练。  
 ## 重新规范了一下数据  
 # 将数据集分为了三个部分，train，test与finaltest  
-model1由train作为训练集，test和finaltest作为测试集分别测试两次，训练的情况记录在graphs中，两次测试分别由static1和static2体现。同时model1训练出了两个版本，分别由数据库中两次不同的随机选择作为训练集得到，效果差异较大。
+model1由train作为训练集，test和finaltest作为测试集分别测试两次，训练的情况记录在graphs中，两次测试分别由static1和static2体现。同时model1训练出了两个版本，分别由数据库中两次不同的随机选择作为训练集得到，效果差异较大。  
 model2由train+0.3\*test作为训练集，即将test中数据的三成放入训练集，剩下七成仍用于测试，以便查看模型能否成功学习test的特征。同样地model2也使用了0.7\*test与finaltest分别做了两次测试。  
 model3由train+test作为训练集，finaltest作为测试集。  
 # 初步测试情况分析  
